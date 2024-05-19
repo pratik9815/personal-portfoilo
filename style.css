@@ -170,29 +170,29 @@ div.navbar{
 
 
 
-#home{
-    /* height: 500px; */
-    /* margin: 0 4% 0 4% */
-}
-#about{
-    background-color: antiquewhite;
+/* #home{
     height: 500px;
     margin: 0 4% 0 4%
+} */
+#about{
+    background-color: #000;
+    margin: 2% 4% 0 4%;
+    height: calc(100dvh - 60px);
 }
 #resume{
     background-color: aqua;
-    height: 500px;
-    margin: 0 4% 0 4%
+    margin: 0 4% 0 4%;
+    height: calc(100dvh - 60px);
 }
 #services{
     background-color: aquamarine;
-    height: 500px;
-    margin: 0 4% 0 4%
+    height: calc(100dvh - 60px);
+    margin: 0 4% 0 4%;
 }
 #skills{
     background-color: azure;
-    height: 500px;
-    margin: 0 4% 0 4%
+    height: calc(100dvh - 60px);
+    margin: 0 4% 0 4%;
 }
 
 
@@ -202,12 +202,12 @@ div.navbar{
     justify-content: center;
     text-align: center;
 
-    background-image: url(images//porfolio.jpg);
-    object-fit: cover;
+    background-image: url(images//portfolio1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100dvh;
-    max-width: 100%;
+    background-position: center;
+    height: calc(100dvh - 60px);
+    width: 100%;
 }
 
 .left-container h1{
@@ -225,8 +225,6 @@ div.navbar{
 .left-container h3 {
     font-size: 1.2em;
     margin-bottom: 1em;
-
-
 }
 
 .button{
@@ -252,9 +250,36 @@ div.navbar{
 .contact-buton:active{
     background-color: #f0a500;
 }
- img{
-    background-repeat: no-repeat;
-    object-fit: cover;
-    height: 100dvh;
-    width: 100%;
+
+
+th, td{
+    /* border: 1px solid; */
+    text-align: start;
+    padding: 20px 0 0 0;
+    width: 200px;
+}
+tr{
+    row-gap: 50px;
+}
+
+.button-cv{
+    margin-top: 25px;
+    padding: 0.5em  1.5em;
+    background-color: #f0a500;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;   
+    transition: all 2s ease;
+}
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1; 
 }

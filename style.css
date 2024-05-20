@@ -150,7 +150,9 @@ div.navbar{
     .left-container{
         text-align: center;
     }
-
+    div.skills-container{
+        grid-template-columns: 1fr;
+    }
 
 }
 
@@ -183,6 +185,10 @@ div.navbar{
     ul li a:hover::after{
         transform: scaleX(1);
         transform-origin: bottom center;
+    }
+
+    div.skills-container{
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
@@ -289,7 +295,6 @@ div.navbar{
 
 
 th, td{
-    /* border: 1px solid; */
     text-align: start;
     padding: 20px 0 0 0;
     width: 200px;
@@ -333,14 +338,14 @@ h1.section-title::before{
     width: 70px;
     background-color: var(--highlight);
     position: absolute;
-    top: 7%;
+    top: 2rem;
     left: 0;
 }
 h1.section-title::after{
     content: '';
     height: 4px;
     width: 35px;
-    top: 7%;
+    top: 2rem;
     background-color: var(--highlight);
     position: absolute;
     left: 0;
@@ -374,62 +379,39 @@ h1.section-title::after{
 .tech:hover{
     background-color: #717d84;
 }
+.skills-section{
+    position: relative;
+}
 div.skills-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    position: relative;
 }
  .html .html-logo{
     background-image: url("images/html.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    /* height: 175px; */
 }
 
 .css .css-logo{
-    background-image: url("images/css.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    /* height: 200px; */
+    background-image: url("images/css1.png");
 }
 .csharp .csharp-logo{
     background-image: url("images/csharp.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    /* height: 200px; */
 }
 .angular .angular-logo{
     background-image: url("images/angular.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    /* height: 200px; */
 }
 .sql .sql-logo{
     background-image: url("images/sql.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    /* height: 200px; */
 }
 .aspnet .aspnet-logo{
     background-image: url("images/aspnetcore.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    /* height: 200px; */
-   
 }
 .logo-padding{
     height: 200px;
     width: auto;
-    /* object-fit: contain;   */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     margin-top: 20px;
     transition: transform 1s;
-    /* border: 1px solid; */
 }
 .logo-padding:hover{
     transform: scale(1.2);

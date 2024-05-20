@@ -6,6 +6,13 @@
     box-sizing: border-box;
 }
 
+:root{
+    --text-white: white;
+    --background-black: black;
+    --bar-color: #7b52b9;
+    --highlight: #f0a500;
+}
+
 html{
     scroll-padding-top: 60px;
     scroll-behavior: smooth;
@@ -17,8 +24,8 @@ body{
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    background-color: black;
-    color: white;
+    background-color: var(--background-black);
+    color: var(--text-white);
 }
 /* styling navbar */
 ul li {
@@ -26,7 +33,7 @@ ul li {
 }
 a{
     text-decoration: none;
-    color: white;
+    color: var(--text-white);
 }
 span.brand{
     margin-left: 4%;
@@ -42,7 +49,8 @@ div.navbar{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
+    background-color: var(--background-black);
+    z-index: 1;
 }
 
 .navbar ul{
@@ -74,9 +82,10 @@ div.navbar{
     right: 0;
     height: 4px;
     border-radius: calc(4px / 2);
-    background: #7b52b9;
+    background: var(--bar-color);
     color: inherit;
     opacity: 1;
+
     transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
     }
     .bar--top {
@@ -134,6 +143,15 @@ div.navbar{
     .navbar #checkbox:checked ~ ul{
         left: 0;
     }
+
+    .right-cotnainer,.left-about{
+        display: none;
+    }
+    .left-container{
+        text-align: center;
+    }
+
+
 }
 
 /* for computer screens */
@@ -170,13 +188,13 @@ div.navbar{
 
 
 
-/* #home{
-    height: 500px;
+#home{
+    /* height: 500px; */
     margin: 0 4% 0 4%
-} */
+}
 #about{
     background-color: #000;
-    margin: 2% 4% 0 4%;
+    margin: 1% 4% 0 4%;
     height: calc(100dvh - 60px);
 }
 #resume{
@@ -190,9 +208,8 @@ div.navbar{
     margin: 0 4% 0 4%;
 }
 #skills{
-    background-color: azure;
-    height: calc(100dvh - 60px);
-    margin: 0 4% 0 4%;
+    /* height: calc(100dvh - 60px); */
+    margin: 2% 4% 0 4%;
 }
 
 
@@ -200,31 +217,50 @@ div.navbar{
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    /* text-align: center; */
+    height: calc(100dvh - 60px);
+    /* width: 100%; */
+    gap: 100px;
+}
 
+.home-container::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
     background-image: url(images//portfolio1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: -1;
+    opacity: 0.3;
     height: calc(100dvh - 60px);
-    width: 100%;
+}
+
+
+.right-cotnainer img{
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 400px;
+    
 }
 
 .left-container h1{
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
+    font-size: 2.5em;
 }
 .left-container h2 {
-    font-size: 2.5em;
-    margin: 0.2em 0;
+    font-size: 1.5em;
+}
+.p-span{
+    font-size: 1.5em;
+    margin-bottom: 5px;
 }
 .highlight {
-    color: #f0a500;
+    color: var(--highlight);
 }
 
 .left-container h3 {
     font-size: 1.2em;
-    margin-bottom: 1em;
 }
 
 .button{
@@ -241,14 +277,14 @@ div.navbar{
 }
 
 .contact-buton{
-    background-color: #f0a500;
+    background-color: var(--highlight);
     color: #000;
 }
 .contact-buton:hover{
-    background-color: white;
+    background-color: var(--text-white);
 }
 .contact-buton:active{
-    background-color: #f0a500;
+    background-color: var(--highlight);
 }
 
 
@@ -264,8 +300,8 @@ tr{
 
 .button-cv{
     margin-top: 25px;
-    padding: 0.5em  1.5em;
-    background-color: #f0a500;
+    padding: 0.8em  1.5em;
+    background-color: var(--highlight);
     border: none;
     border-radius: 20px;
     font-size: 0.8em;
@@ -275,11 +311,126 @@ tr{
 
 .reveal{
     position: relative;
-    transform: translateY(150px);
+    transform: translateX(-100px);
     opacity: 0;   
     transition: all 2s ease;
 }
 .reveal.active{
-    transform: translateY(0px);
+    transform: translatex(0px);
     opacity: 1; 
+}
+
+.right-about{
+    position: relative;
+    place-self: center;
+}
+.section-title{
+    margin-bottom: 20px;
+}
+h1.section-title::before{
+    content: '';
+    height: 4px;
+    width: 70px;
+    background-color: var(--highlight);
+    position: absolute;
+    top: 7%;
+    left: 0;
+}
+h1.section-title::after{
+    content: '';
+    height: 4px;
+    width: 35px;
+    top: 7%;
+    background-color: var(--highlight);
+    position: absolute;
+    left: 0;
+    margin-top: 8px;
+}
+
+.about-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-self: center;
+}
+.left-about{
+    place-self: center;
+}
+
+.left-about img{
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+ 
+}
+
+.tech{
+    background-color: rgb(80, 84, 87);
+    margin: 20px;
+    padding: 20px;
+    border: 5px solid rgb(199, 183, 183);
+    transition: all 0.5s ease;
+    text-align: center;
+}
+.tech:hover{
+    background-color: #717d84;
+}
+div.skills-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+}
+ .html .html-logo{
+    background-image: url("images/html.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /* height: 175px; */
+}
+
+.css .css-logo{
+    background-image: url("images/css.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /* height: 200px; */
+}
+.csharp .csharp-logo{
+    background-image: url("images/csharp.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /* height: 200px; */
+}
+.angular .angular-logo{
+    background-image: url("images/angular.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /* height: 200px; */
+}
+.sql .sql-logo{
+    background-image: url("images/sql.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /* height: 200px; */
+}
+.aspnet .aspnet-logo{
+    background-image: url("images/aspnetcore.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /* height: 200px; */
+   
+}
+.logo-padding{
+    height: 200px;
+    width: auto;
+    /* object-fit: contain;   */
+    margin-top: 20px;
+    transition: transform 1s;
+    /* border: 1px solid; */
+}
+.logo-padding:hover{
+    transform: scale(1.2);
 }

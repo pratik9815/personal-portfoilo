@@ -13,7 +13,6 @@
         <div class="navbar">
             <span class="brand">PRATIK</span>
 
-
             <input id="checkbox" type="checkbox">
             <label class="toggle" for="checkbox">
                 <div class="bar bar--top"></div>
@@ -36,63 +35,121 @@
 
     <div class="home-container" id="home">
 
-        <div class="left-content">
+        <div class="left-container">
             <h1>Hello!</h1>
             <h1>I'm <span class="highlight">Pratik Chamlagain</span></h1>
-            <h2>Developer</h2>
+            <p class="p-span">and I'm a </p>
+            <!-- <h3>Web Developer</h3> -->
+            <h3><span id="element"></span></h3>
             <div class="button">
                 <button class="contact-buton">Contact Me</button>
             </div>
         </div>
+        <div class="right-cotnainer">
+            <img src="images/developer.png" alt="developer-image">
+        </div>
 
     </div>
-    <div class="about-container reveal" id="about">
-        <h1>About Me</h1>
-        <p>
-            I am a full stack developer with knowledge about frontend techologies like Angular and backend techologies
-            like ASP.NET Core. I have knowledge about languages like HTML, CSS, C#, JS, TS etc
-        </p>
-        <table>
-            <tr>
-                <th>Name:</th>
-                <td>Pratik Chamlagain</td>
-            </tr>
-            <tr>
-                <th>Address:</th>
-                <td>Kankai-6</td>
-            </tr>
-            <tr>
-                <th>Phone No:</th>
-                <td>9815005925</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>pchamlagain12@gmail.com</td>
-            </tr>
-            <tr>
-                <th>Date of birth</th>
-                <td>2002 A.D</td>
-            </tr>
-        </table>
-        <button class="button-cv">DOWNLOAD CV</button>
-    </div>
-    <div class="resume-container reveal" id="resume">
+    <section class="about-container reveal" id="about">
+        <div class="left-about">
+            <img src="images/aboutme.png" alt="">
+        </div>
+        <div class="right-about">
+
+            <h1 class="section-title">About Me</h1>
+            <div class="paragraph-section">
+                <p> I graduated from Purwanchan Campus, Dharan with a degree
+                    in Computer Engineering.</p>
+
+                I am a full stack developer with knowledge about frontend techologies like Angular and backend
+                techologies
+                like ASP.NET Core. I have knowledge about languages like HTML, CSS, C#, JS, TS etc.
+            </div>
+            <table>
+                <tr>
+                    <th>Name:</th>
+                    <td>Pratik Chamlagain</td>
+                </tr>
+                <tr>
+                    <th>Address:</th>
+                    <td>Kankai-6</td>
+                </tr>
+                <tr>
+                    <th>Phone No:</th>
+                    <td>9815005925</td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td>pchamlagain12@gmail.com</td>
+                </tr>
+                <tr>
+                    <th>Degree:</th>
+                    <td>Computer Engineering</td>
+                </tr>
+                <tr>
+                    <th>Date of birth:</th>
+                    <td>2002 A.D</td>
+                </tr>
+            </table>
+            <button class="button-cv">DOWNLOAD CV</button>
+        </div>
+
+    </section>
+    <section class="resume-container reveal" id="resume">
         <h1>This is resume container</h1>
-    </div>
-    <div class="services-container reveal" id="services">
+    </section>
+    <section class="services-container reveal" id="services">
         <h1>this is services container</h1>
-    </div>
-    <div class="skills-container reveal" id="skills">
-        <h1>this is skills container</h1>
-    </div>
-    <div class="projects-container reveal" id="projects">
-        <h1>this is projects container</h1>
-    </div>
-    <div class="contact-container reveal" id="contact">
+    </section>
+    <section class=" reveal" id="skills">
+        <h1 class="section-title">Skills</h1>
+        <div class="skills-container">
+            <div class="html tech">HTML
+                <div class="html-logo logo-padding">
+                </div>
+            </div>
+            <div class="css tech">CSS
+                <div class="css-logo logo-padding">
 
-    </div>
+                </div>
+            </div>
+            <div class="sql tech">Sql Server
+                <div class="sql-logo logo-padding">
+
+                </div>
+            </div>
+            <div class="csharp tech">C-Sharp
+                <div class="csharp-logo logo-padding"></div>
+            </div>
+            <div class="angular tech">Angular
+                <div class="angular-logo logo-padding"></div>
+            </div>
+            <div class="aspnet tech">ASP.NET CORE
+                <div class="aspnet-logo logo-padding"></div>
+            </div>
+        </div>
+
+
+
+    </section>
+    <section class="projects-container reveal" id="projects">
+        <h1>this is projects container</h1>
+    </section>
+    <section class="contact-container reveal" id="contact">
+
+    </section>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['<i>Web</i> Developer', '&amp; Web Developer.'],
+            typeSpeed: 120,
+            smartBackspace: true,
+            loop: true,
+            cursorChar: '_'
+        });
+    </script>
 </body>
 
 </html>

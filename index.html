@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pratik Chamlagain</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -24,7 +27,7 @@
             <ul>
                 <li class="nav-item"><a href="#home">Home</a></li>
                 <li class="nav-item"><a href="#about">About</a></li>
-                <li class="nav-item"><a href="#resume">Resume</a></li>
+                <!-- <li class="nav-item"><a href="#resume">Resume</a></li> -->
                 <li class="nav-item"><a href="#services">Services</a></li>
                 <li class="nav-item"><a href="#skills">Skills</a></li>
                 <li class="nav-item"><a href="#projects">Projects</a></li>
@@ -40,7 +43,7 @@
             <h1>I'm <span class="highlight">Pratik Chamlagain</span></h1>
             <p class="p-span">and I'm a </p>
             <!-- <h3>Web Developer</h3> -->
-            <h3><span id="element"></span></h3>
+            <h3><span class="highlight" id="element"></span></h3>
             <div class="button">
                 <button class="contact-buton">Contact Me</button>
             </div>
@@ -97,12 +100,12 @@
     <section class="resume-container reveal" id="resume">
         <h1>This is resume container</h1>
     </section>
-    <section class="services-container reveal" id="services">
+    <!-- <section class="services-container reveal" id="services">
         <h1>This is services container</h1>
-    </section>
+    </section> -->
     <section class="skills-section reveal" id="skills">
         <h1 class="section-title">Skills</h1>
-        <div class="skills-container">
+        <div class="grid-container skills-container">
             <div class="html tech">HTML
                 <div class="html-logo logo-padding">
                 </div>
@@ -132,7 +135,8 @@
 
     </section>
     <section class=" reveal" id="projects">
-        <div class="skills-container">
+        <h1 class="section-title">Projects</h1>
+        <div class="grid-container">
             <div class="project"></div>
             <div class="project"></div>
             <div class="project"></div>
@@ -140,7 +144,25 @@
         </div>
     </section>
     <section class="contact-container reveal" id="contact">
-
+        <div class="flex-container">
+            <div class="contact-logo">
+                <h1>Contact Me</h1>
+                <ul>
+                    <li>Kankai-6, Jhapa, Nepal</li>
+                    <li>pchamlagain12@gmail.com</li>
+                    <li>9815005925</li>
+                </ul>
+                <div class="img-box">
+                    <img src="images/x.png" alt="">
+                    <img src="images/facebook.png" alt="">
+                    <img src="images/instagram.png" alt="">
+                    <img src="images/linkedin.png" alt="">
+                </div>
+            </div>
+            <div class="contactme-image">
+                <img src="images/contact-me.png" alt="">
+            </div>
+        </div>
     </section>
 
     <script src="script.js"></script>

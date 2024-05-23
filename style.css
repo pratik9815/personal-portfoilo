@@ -11,6 +11,10 @@
     --background-black: black;
     --bar-color: #7b52b9;
     --highlight: #f0a500;
+    --border-color:rgb(199, 183, 183);
+    --hover-tech:#717d84;
+    --tech-color:rgb(80, 84, 87);
+    --underline-color:#0087ca;
 }
 
 html{
@@ -178,7 +182,7 @@ div.navbar{
         height: 3px;
         bottom: 0;
         left: 0;
-        background-color: #0087ca;
+        background-color: var(--underline-color);
         transform-origin: bottom center;
         transition: transform 0.25s ease-out;
     }
@@ -200,8 +204,8 @@ div.navbar{
 }
 #about{
     background-color: #000;
-    margin: 1% 4% 0 4%;
-    height: calc(100dvh - 60px);
+    margin: 2% 4% 2% 4%;
+    /* height: calc(100dvh - 60px); */
 }
 #resume{
     background-color: aqua;
@@ -215,6 +219,10 @@ div.navbar{
 }
 #skills{
     /* height: calc(100dvh - 60px); */
+    margin: 2% 4% 0 4%;
+}
+#projects{
+    height: calc(100dvh - 60px);
     margin: 2% 4% 0 4%;
 }
 
@@ -284,7 +292,7 @@ div.navbar{
 
 .contact-buton{
     background-color: var(--highlight);
-    color: #000;
+    color: var(--background-black);
 }
 .contact-buton:hover{
     background-color: var(--text-white);
@@ -369,15 +377,15 @@ h1.section-title::after{
 }
 
 .tech{
-    background-color: rgb(80, 84, 87);
+    background-color: var(--tech-color);
     margin: 20px;
     padding: 20px;
-    border: 5px solid rgb(199, 183, 183);
+    border: 5px solid var(--border-color);
     transition: all 0.5s ease;
     text-align: center;
 }
 .tech:hover{
-    background-color: #717d84;
+    background-color: var(--hover-tech);
 }
 .skills-section{
     position: relative;
@@ -415,4 +423,18 @@ div.skills-container{
 }
 .logo-padding:hover{
     transform: scale(1.2);
+}
+
+/* div.project-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+} */
+div.project{
+    border: 5px solid;
+    place-self: center;
+    height: 200px;
+    width: 340px;
+    margin: 20px;
+
 }

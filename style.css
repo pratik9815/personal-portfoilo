@@ -15,6 +15,7 @@
     --hover-tech:#717d84;
     --tech-color:rgb(80, 84, 87);
     --underline-color:#0087ca;
+    --gray-color: #423d3d;
 }
 
 html{
@@ -28,7 +29,7 @@ body{
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    background-color: var(--background-black);
+    background-color: var(--gray-color);
     color: var(--text-white);
 }
 /* styling navbar */
@@ -148,7 +149,14 @@ div.navbar{
         left: 0;
     }
 
-    .right-cotnainer,.left-about,.contactme-image,.vertical-line{
+    .contactme-image{
+        display: none;
+    }
+
+
+}
+@media(max-width: 550px){
+    .right-container,.left-about,.contactme-image{
         display: none;
     }
     .left-container{
@@ -157,7 +165,16 @@ div.navbar{
     div.grid-container{
         grid-template-columns: 1fr;
     }
+}
 
+@media(max-width: 768px) and (min-width: 550px){
+    
+    div.grid-container{
+        grid-template-columns: 1fr 1fr;
+    }
+    .contactme-image,.right-container{
+        display: none;
+    }
 }
 
 /* for computer screens */
@@ -190,14 +207,9 @@ div.navbar{
         transform: scaleX(1);
         transform-origin: bottom center;
     }
-
-    /* div.skills-container{
-        grid-template-columns: 1fr 1fr 1fr;
-    } */
     div.grid-container{
         grid-template-columns: 1fr 1fr 1fr; 
     }
-
 }
 
 
@@ -206,16 +218,12 @@ div.navbar{
     margin: 0 4% 0 4%
 }
 #about{
-    background-color: #000;
+    /* background-color: #000; */
     margin: 2% 4% 2% 4%;
 }
-#resume{
-    background-color: aqua;
-    margin: 0 4% 0 4%;
-    height: calc(100dvh - 60px);
-}
+
 #services{
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     height: calc(100dvh - 60px);
     margin: 0 4% 0 4%;
 }
@@ -228,6 +236,8 @@ div.navbar{
 }
 #contact{
     /* background-color: rgb(99, 99, 151); */
+    /* background-color: #7f95d1; */
+    border-top: 2px solid;
     padding: 2% 10% 0 10%;
     min-height: 250px;
 }
@@ -251,12 +261,12 @@ div.navbar{
     background-size: cover;
     background-position: center;
     z-index: -1;
-    opacity: 0.3;
+    opacity: .30;
     height: calc(100dvh - 60px);
 }
 
 
-.right-cotnainer img{
+.right-container img{
     background-repeat: no-repeat;
     background-size: contain;
     height: 400px;
@@ -430,14 +440,11 @@ h1.section-title::after{
 .grid-container{
     display: grid;
 }
-
 div.project{
-    border: 5px solid;
-    place-self: center;
-    height: 200px;
-    width: 300px;
+    /* width: 1fr; */
     margin: 20px;
 }
+
 .flex-container{
     display: flex;
     justify-content: center;
@@ -462,4 +469,17 @@ div.project{
 
 .img-box img:hover{
     cursor: pointer;
+}
+
+.grid-container img{
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 5px solid;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    width: 100%;
+    /* max-width: 25rem; */
+    height: auto;
+    margin-bottom: 20px;
+    
 }

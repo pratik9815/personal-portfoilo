@@ -1,30 +1,30 @@
-function toggleFunction() {
-    var checkbox = document.getElementById("checkbox");
-    var element = document.getElementById("menu-toggle");   
+// function toggleFunction() {
+//     var checkbox = document.getElementById("checkbox");
+//     var element = document.getElementById("menu-toggle");   
     
-    if (checkbox.checked) {
-        element.style.display = "block";
-    } else {
-        element.style.display = "none";
-    }
-}
+//     if (checkbox.checked) {
+//         element.style.display = "block";
+//     } else {
+//         element.style.display = "none";
+//     }
+// }
 
 
-function isChecked()
-{
-    var checkbox = document.getElementById("checkbox");
-    console.log(checkbox.checked);
-}
+// function isChecked()
+// {
+//     var checkbox = document.getElementById("checkbox");
+//     console.log(checkbox.checked);
+// }
 
-document.addEventListener("DOMContentLoaded",function() {
-    var navLinks = document.querySelectorAll('.nav-item');
-    navLinks.forEach(function(links){
-        links.addEventListener('click',function(){
-            document.getElementById('checkbox').checked = false;
-        });
-    });
+// document.addEventListener("DOMContentLoaded",function() {
+//     var navLinks = document.querySelectorAll('.nav-item');
+//     navLinks.forEach(function(links){
+//         links.addEventListener('click',function(){
+//             document.getElementById('checkbox').checked = false;
+//         });
+//     });
 
-})
+// })
 
 
 window.addEventListener('scroll',reveal);
@@ -45,3 +45,21 @@ function reveal(){
         }
     }
 }
+
+
+
+function updateActiveNavItem(event){
+    // event.preventDefault();
+
+    document.querySelectorAll('.nav-item').forEach(item =>{
+        item.classList.remove('active');
+        item.querySelector('a').removeAttribute('aria-current');
+    });
+
+    event.currentTarget.classList.add('active');
+    event.currentTarget.querySelector('a').setAttribute('aria-current','page');
+}
+
+document.querySelectorAll('.nav-item').forEach(item =>{
+    item.addEventListener('click',updateActiveNavItem);
+});

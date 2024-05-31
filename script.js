@@ -23,12 +23,22 @@
 //             document.getElementById('checkbox').checked = false;
 //         });
 //     });
-
 // })
 
 
 window.addEventListener('scroll', reveal);
 window.addEventListener('scroll', onScroll);
+
+document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', updateActiveNavItem);
+
+});
+
+document.querySelectorAll('.nav-item a').forEach(item => {
+    item.addEventListener('click', () => {
+        document.getElementById('checkbox').checked = false;
+    });
+});
 
 function reveal() {
     var reveals = document.querySelectorAll('.reveal');
@@ -54,7 +64,6 @@ function onScroll(event) {
     let currentSection = null;
     sections.forEach(section => {
         const visibleArea = getVisibleArea(section);
-        console.log(visibleArea.toFixed())
         if (visibleArea > maxVisibleArea) {
             maxVisibleArea = visibleArea;
             currentSection = section.getAttribute("id");
@@ -69,18 +78,7 @@ function onScroll(event) {
             items.querySelector('a').setAttribute('aria-current', 'page');
         }
     });
-
 }
-
-function getVisibleArea(element) {
-    const rect = element.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    const windowWidth = window.innerWidth || document.documentElement.clientWidth;
-    const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
-    const visibleWidth = Math.min(rect.right, windowWidth) - Math.max(rect.left, 0);
-    return visibleHeight * visibleWidth;
-}
-
 function updateActiveNavItem(event) {
 
     document.querySelectorAll('.nav-item').forEach(item => {
@@ -92,7 +90,15 @@ function updateActiveNavItem(event) {
     event.currentTarget.querySelector('a').setAttribute('aria-current', 'page');
 }
 
-document.querySelectorAll('.nav-item').forEach(item => {
-    item.addEventListener('click', updateActiveNavItem);
 
-});
+
+function getVisibleArea(element) {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+    const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+    const visibleWidth = Math.min(rect.right, windowWidth) - Math.max(rect.left, 0);
+    return visibleHeight * visibleWidth;
+}
+
+

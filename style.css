@@ -77,7 +77,7 @@ div.navbar {
 
 /* making navbar responsive */
 /* for mobile screen */
-@media(max-width: 900px) {
+@media(max-width: 850px) {
     .toggle {
         position: relative;
         width: 40px;
@@ -165,6 +165,14 @@ div.navbar {
     .d-flex {
         flex-direction: column;
     }
+
+    .d-flex {
+        gap: 10px;
+    }
+
+    .number {
+        display: none;
+    }
 }
 
 @media(max-width: 550px) {
@@ -182,6 +190,7 @@ div.navbar {
     div.grid-container {
         grid-template-columns: 1fr;
     }
+
 }
 
 @media(max-width: 768px) and (min-width: 550px) {
@@ -236,8 +245,14 @@ div.navbar {
     div.grid-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
 }
 
+@media(min-width: 850px) {
+    .d-flex {
+        gap: 100px;
+    }
+}
 
 
 #home {
@@ -502,7 +517,7 @@ h1.section-title::after {
 }
 
 div.project {
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 .flex-container {
@@ -552,7 +567,6 @@ div.project {
     cursor: pointer;
 }
 
-
 .project-image img {
     background-repeat: no-repeat;
     background-position: center;
@@ -560,26 +574,22 @@ div.project {
     object-fit: contain;
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
     transition: all 0.5s ease;
     background-color: var(--tech-color);
     border-radius: 15px;
     transition: filter 0.5s ease, transform 0.5s ease;
-    width: 400px;
-    height: 300px;
-
+    width: 100%;
+    height: auto;
 }
 
 .project-list {
     display: grid;
     grid-template-columns: 1fr;
-    /* place-items: center; */
     row-gap: 50px;
 }
 
 .d-flex {
     display: flex;
-    gap: 50px;
 }
 
 .project-title {
@@ -588,18 +598,17 @@ div.project {
 }
 
 .desc-text p {
-    margin-inline-start: 20px;
+    margin-inline-start: 40px;
 }
 
 .separator {
     border-bottom: 1px solid #ffffff;
-    /* margin: 20px 0; */
     width: 80%;
 }
 
 .number {
-    /* position: absolute; */
-    font-size: 48px;
+    font-size: 68px;
     color: #7765d9;
     font-weight: bold;
+    margin-top: 50px;
 }

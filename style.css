@@ -16,6 +16,7 @@
     --tech-color: rgb(80, 84, 87);
     --underline-color: #0087ca;
     --gray-color: #423d3d;
+    --button-hover: #7765d9;
 }
 
 html {
@@ -442,7 +443,6 @@ h1.section-title::after {
 
 .about-container {
     display: grid;
-    /* grid-template-columns: 1fr 1fr; */
     place-self: center;
 }
 
@@ -460,11 +460,9 @@ h1.section-title::after {
     background-color: var(--tech-color);
     margin: 30px;
     padding: 20px;
-    /* border: 5px solid var(--border-color); */
     transition: all 0.5s ease;
     text-align: center;
     border-radius: 15px;
-    /* height: 200px; */
 }
 
 .tech:hover {
@@ -527,9 +525,9 @@ h1.section-title::after {
     display: grid;
 }
 
-.relative {
+/* .relative {
     place-items: center;
-}
+} */
 
 .flex-container {
     display: flex;
@@ -558,7 +556,7 @@ h1.section-title::after {
     cursor: pointer;
 }
 
-.grid-container img {
+/* .grid-container img {
     background-repeat: no-repeat;
     background-position: center;
     aspect-ratio: 3/2;
@@ -566,31 +564,21 @@ h1.section-title::after {
     width: 100%;
     height: auto;
     margin-bottom: 20px;
-    transition: all 0.5s ease;
     background-color: var(--tech-color);
     border-radius: 15px;
     transition: filter 0.5s ease, transform 0.5s ease;
+} */
 
-}
-
-.grid-container img:hover {
-    filter: contrast(50%);
-    cursor: pointer;
-}
-
-.project-image img {
+.project-image .common {
     background-repeat: no-repeat;
     background-position: center;
     aspect-ratio: 3/2;
     object-fit: contain;
     width: 100%;
-    height: auto;
-    transition: all 0.5s ease;
+    height: 100%;
     background-color: var(--tech-color);
     border-radius: 15px;
     transition: filter 0.5s ease, transform 0.5s ease;
-    width: 100%;
-    height: auto;
 }
 
 .project-list {
@@ -601,6 +589,19 @@ h1.section-title::after {
 
 .d-flex {
     display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.d-flex .project-image {
+    flex: 5;
+}
+
+.d-flex .desc-text {
+    flex: 8;
+}
+
+.d-flex .project-number {
+    flex: 1;
 }
 
 .project-title {
@@ -624,12 +625,50 @@ h1.section-title::after {
     margin-top: 50px;
 }
 
-img.sql-class {
-    height: 300px;
-    width: 400px;
+
+.project-image {
+    position: relative;
+    overflow: hidden;
 }
 
-img.sms-class {
-    height: 300px;
-    width: 400px;
+.hover-text {
+    position: absolute;
+    top: 100%;
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 25%;
+}
+
+.project-image:hover .hover-text {
+    top: 0;
+}
+
+.project-image:hover .common {
+    filter: blur(5px);
+}
+
+a .button-project {
+    padding: 15px 40px;
+    transition: all 0.4s;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1rem;
+    background-color: var(--button-hover);
+}
+
+a .button-project:hover {
+    cursor: pointer;
+    background-color: var(--highlight);
+
+}
+
+a button .github {
+    height: 20px;
+    width: 20px;
+    margin-inline-end: 10px;
+    margin-top: 4px;
 }
